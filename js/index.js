@@ -43,7 +43,8 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // nav items
 let nav = document.querySelectorAll("nav a");
-nav[0].textContent = siteContent['nav']['nav-item-1'];
+//nav[0].textContent = siteContent['nav']['nav-item-1'];
+nav[0].textContent = siteContent.nav["nav-item-1"]
 nav[1].textContent = siteContent['nav']['nav-item-2'];
 nav[2].textContent = siteContent['nav']['nav-item-3'];
 nav[3].textContent = siteContent['nav']['nav-item-4'];
@@ -67,7 +68,7 @@ newNav2.style.margin = '40px 0 0 15px';
 newNav2.style.fontSize = '20px';
 newNav2.style.textDecoration = 'none';
 newNav2.style.whiteSpace = 'nowrap';
-newNav2.style.color = 'red';
+newNav2.style.color = 'blue';
 newNav2.href = '#';
 
 // adding new nav items (to header)
@@ -86,7 +87,18 @@ ctaTitle.textContent = siteContent['cta']['h1'];
 
 let ctaBtn = document.querySelector('button');
 ctaBtn.textContent = siteContent['cta']['button'];
+// Event handler - button
+ctaBtn.addEventListener('click', changeColor);
 
+// Event function - button
+function changeColor() {
+  ctaBtn.style.color = 'white';
+  if (ctaTitle.style.color !== 'red') {
+    ctaTitle.style.color = 'red', ctaBtn.style.backgroundColor = 'red';
+  } else {
+    ctaTitle.style.color = 'black', ctaBtn.style.backgroundColor = 'black';
+  }  
+}
 
 let ctaImg = document.getElementById('cta-img');
 ctaImg.src = siteContent['cta']['img-src'];
