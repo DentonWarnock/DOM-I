@@ -40,3 +40,106 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// nav items
+let nav = document.querySelectorAll("nav a");
+//nav[0].textContent = siteContent['nav']['nav-item-1'];
+nav[0].textContent = siteContent.nav["nav-item-1"]
+nav[1].textContent = siteContent['nav']['nav-item-2'];
+nav[2].textContent = siteContent['nav']['nav-item-3'];
+nav[3].textContent = siteContent['nav']['nav-item-4'];
+nav[4].textContent = siteContent['nav']['nav-item-5'];
+nav[5].textContent = siteContent['nav']['nav-item-6'];
+
+// new nav item 1 
+let newNav1 = document.createElement('a');
+newNav1.textContent = "Hi!";
+newNav1.style.margin = '40px 15px 0 0';
+newNav1.style.fontSize = '20px';
+newNav1.style.textDecoration = 'none';
+newNav1.style.whiteSpace = 'nowrap';
+newNav1.style.color = 'red';
+newNav1.href = '#';
+
+// new nav item 2
+let newNav2 = document.createElement('a');
+newNav2.textContent = "Bye!";
+newNav2.style.margin = '40px 0 0 15px';
+newNav2.style.fontSize = '20px';
+newNav2.style.textDecoration = 'none';
+newNav2.style.whiteSpace = 'nowrap';
+newNav2.style.color = 'blue';
+newNav2.href = '#';
+
+// adding new nav items (to header)
+const header = document.querySelector('header');
+header.prepend(newNav1);
+header.append(newNav2);
+
+// nav styling
+nav.forEach((element) => {element.style.color = 'green'});
+nav.forEach((element) => {element.style.fontWeight = 'bold'});
+nav.forEach((element) => {element.style.fontSize = '24px'});
+
+// cta
+let ctaTitle = document.querySelector('h1');
+ctaTitle.textContent = siteContent['cta']['h1'];
+
+let ctaBtn = document.querySelector('button');
+ctaBtn.textContent = siteContent['cta']['button'];
+// Event handler - button
+ctaBtn.addEventListener('click', changeColor);
+
+// Event function - button
+function changeColor() {
+  ctaBtn.style.color = 'white';
+  if (ctaTitle.style.color !== 'red') {
+    ctaTitle.style.color = 'red', ctaBtn.style.backgroundColor = 'red';
+  } else {
+    ctaTitle.style.color = 'black', ctaBtn.style.backgroundColor = 'black';
+  }  
+}
+
+let ctaImg = document.getElementById('cta-img');
+ctaImg.src = siteContent['cta']['img-src'];
+
+// h4's - main
+let h4Tag = document.querySelectorAll('h4');
+h4Tag[0].textContent = siteContent['main-content']['features-h4'];
+h4Tag[1].textContent = siteContent['main-content']['about-h4'];
+h4Tag[2].textContent = siteContent['main-content']['services-h4'];
+h4Tag[3].textContent = siteContent['main-content']['product-h4'];
+h4Tag[4].textContent = siteContent['main-content']['vision-h4'];
+
+// p tags - main
+let pTag = document.querySelectorAll('p');
+pTag[0].textContent = siteContent['main-content']['features-content'];
+pTag[1].textContent = siteContent['main-content']['about-content'];
+pTag[2].textContent = siteContent['main-content']['services-content'];
+pTag[3].textContent = siteContent['main-content']['product-content'];
+pTag[4].textContent = siteContent['main-content']['vision-content'];
+
+// mid img
+let codeImg = document.getElementById('middle-img');
+codeImg.src = 'img/mid-page-accent.jpg';
+
+// contact
+h4Tag[5].textContent = siteContent['contact']['contact-h4'];
+pTag[5].textContent = siteContent['contact']['address'];
+pTag[6].textContent = siteContent['contact']['phone'];
+pTag[7].textContent = siteContent['contact']['email'];
+
+// footer
+pTag[8].textContent = siteContent['footer']['copyright'];
+
+
+
+
+
+
+
+
+
+
+
+
